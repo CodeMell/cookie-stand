@@ -1,4 +1,4 @@
-SeattleSales = [];
+let SeattleSales = [];
 
 let Seattlevalue = {
     //min hourly customers
@@ -15,7 +15,18 @@ function randomNum() {
 //customers per hour
 function SeattleCPH(){
     for(let x = 0; x < 15; x += 1){
-        
-        SeattleSales.push();
+        // console.log(randomNum());
+        SeattleSales.push(randomNum());
     }
+    SeattleMath();
 }
+function SeattleMath(){
+    let initialValue = 0;
+    Seattlevalue.average = SeattleSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /15 ;
+    Seattlevalue.max = Math.max(SeattleSales);
+    Seattlevalue.min = Math.min(SeattleSales);
+}
+
+
+
+SeattleCPH();
