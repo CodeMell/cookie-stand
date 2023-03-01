@@ -126,6 +126,7 @@ function CPHmath(){
     document.getElementById('SeattleMin').innerHTML += SeattleValue.min;
     document.getElementById('SeattleAvg').innerHTML += SeattleValue.average;
     
+    
     document.getElementById('TokyoMax').innerHTML += TokyoValue.max;
     document.getElementById('TokyoMin').innerHTML += TokyoValue.min;
     document.getElementById('TokyoAvg').innerHTML += TokyoValue.average;
