@@ -25,6 +25,10 @@ function SeattleMath(){
     Seattlevalue.average = SeattleSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /15 ;
     Seattlevalue.max = Math.max(SeattleSales);
     Seattlevalue.min = Math.min(SeattleSales);
+    document.getElementById('SeattleMax').innerHTML += Seattlevalue.max;
+    document.getElementById('SeattleMin').innerHTML += Seattlevalue.min;
+    document.getElementById('SeattleAvg').innerHTML += Seattlevalue.average;
+
 }
 
 
