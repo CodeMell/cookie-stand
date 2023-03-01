@@ -3,6 +3,8 @@ let TokyoSales = [];
 let DubaiSales = [];
 let ParisSales = [];
 let LimaSales = [];
+let hoursDemo = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
+
 
 let SeattleValue = {
     //min hourly customers
@@ -14,6 +16,16 @@ let SeattleValue = {
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
+    hours(){
+        let hoursArray = document.querySelector('.SeattleOutput');
+        for(let i = 0; i < hoursDemo.length; i++) {
+            //hoursDemo[i].innerHTML
+            let variable = document.createElement("li");
+            variable.innerHTML = `${hoursDemo[i]}: ${SeattleSales[i]} cookies`;
+            hoursArray.append(variable);
+        }
+    },
+    
 };
 
 let TokyoValue = {
@@ -25,6 +37,15 @@ let TokyoValue = {
     average: 0,
     randomNum() {
         return Math.floor(Math.random() * 100);
+    },
+    hours(){
+        let hoursArray = document.querySelector('.TokyoOutput');
+        for(let i = 0; i < hoursDemo.length; i++) {
+            //hoursDemo[i].innerHTML
+            let variable = document.createElement("li");
+            variable.innerHTML = `${hoursDemo[i]}: ${TokyoSales[i]} cookies`;
+            hoursArray.append(variable);
+        }
     },
 };
 
@@ -38,6 +59,15 @@ let DubaiValue = {
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
+    hours(){
+        let hoursArray = document.querySelector('.DubaiOutput');
+        for(let i = 0; i < hoursDemo.length; i++) {
+            //hoursDemo[i].innerHTML
+            let variable = document.createElement("li");
+            variable.innerHTML = `${hoursDemo[i]}: ${DubaiSales[i]} cookies`;
+            hoursArray.append(variable);
+        }
+    },
 };
 
 let ParisValue = {
@@ -49,6 +79,15 @@ let ParisValue = {
     average: 0,
     randomNum() {
         return Math.floor(Math.random() * 100);
+    },
+    hours(){
+        let hoursArray = document.querySelector('.ParisOutput');
+        for(let i = 0; i < hoursDemo.length; i++) {
+            //hoursDemo[i].innerHTML
+            let variable = document.createElement("li");
+            variable.innerHTML = `${hoursDemo[i]}: ${ParisSales[i]} cookies`;
+            hoursArray.append(variable);
+        }
     },
 };
 
@@ -62,40 +101,53 @@ let LimaValue = {
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
+    hours(){
+        let hoursArray = document.querySelector('.LimaOutput');
+        for(let i = 0; i < hoursDemo.length; i++) {
+            //hoursDemo[i].innerHTML
+            let variable = document.createElement("li");
+            variable.innerHTML = `${hoursDemo[i]}: ${LimaSales[i]} cookies`;
+            hoursArray.append(variable);
+        }
+    },
 };
 
 
 
 //customers per hour
 function SeattleCPH(){
-    for(let x = 0; x < 15; x += 1){
+    for(let x = 0; x < 14; x += 1){
         SeattleSales.push(SeattleValue.randomNum());
     }
-    
+    SeattleValue.hours();
 }
 
 //customers per hour
 function TokyoCPH(){
-    for(let x = 0; x < 15; x += 1){
+    for(let x = 0; x < 14; x += 1){
         TokyoSales.push(TokyoValue.randomNum());
     }
+    TokyoValue.hours();
 }
 //customers per hour
 function DubaiCPH(){
-    for(let x = 0; x < 15; x += 1){
+    for(let x = 0; x < 14; x += 1){
         DubaiSales.push(DubaiValue.randomNum());
     }
+    DubaiValue.hours();
 }
 //customers per hour
 function ParisCPH(){
-    for(let x = 0; x < 15; x += 1){
+    for(let x = 0; x < 14; x += 1){
         ParisSales.push(ParisValue.randomNum());
     }
+    ParisValue.hours();
 }
 function LimaCPH(){
-    for(let x = 0; x < 15; x += 1){
+    for(let x = 0; x < 14; x += 1){
         LimaSales.push(LimaValue.randomNum());
     }
+    LimaValue.hours();
 }
 
 
@@ -103,11 +155,11 @@ function LimaCPH(){
 function CPHmath(){
     //
     let initialValue = 0;
-    SeattleValue.average = Math.floor(SeattleSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /15);
-    TokyoValue.average = Math.floor(TokyoSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /15);
-    DubaiValue.average = Math.floor(DubaiSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /15);
-    ParisValue.average = Math.floor(ParisSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /15);
-    LimaValue.average = Math.floor(LimaSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /15);
+    SeattleValue.average = Math.floor(SeattleSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
+    TokyoValue.average = Math.floor(TokyoSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
+    DubaiValue.average = Math.floor(DubaiSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
+    ParisValue.average = Math.floor(ParisSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
+    LimaValue.average = Math.floor(LimaSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
     //
     SeattleValue.max = Math.max(...SeattleSales);
     TokyoValue.max = Math.max(...TokyoSales);
