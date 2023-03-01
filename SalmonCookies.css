@@ -1,7 +1,29 @@
+body{
+    background-color: darksalmon;
+}
 .nav{
     background-color: wheat;
     text-align: center;
+    padding: 5px;
+    margin: auto;
+    width: 95%;
 }
 .nav a{
+    text-decoration: none;
     padding: 5px;
+}
+.nav a:hover{
+    background-color: rgb(128, 115, 92);
+    color: white;
+}
+h1{
+    text-align: center;
+}
+.content{
+    background-color: slategray;
+    border: 8px double  salmon;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    width: 90%;
 }
