@@ -15,7 +15,7 @@ let SeattleValue = {
     average: 0,
     sum: 0,
     randomNum() {
-        return Math.floor(Math.random() * 100);
+        return Math.floor(Math.random() * 100 + 1);
     },
     hours(){
         let hoursArray = document.querySelector('.SeattleOutput');
@@ -39,7 +39,7 @@ let TokyoValue = {
     average: 0,
     sum: 0,
     randomNum() {
-        return Math.floor(Math.random() * 100);
+        return Math.floor(Math.random() * 100 + 1);
     },
     hours(){
         let hoursArray = document.querySelector('.TokyoOutput');
@@ -61,7 +61,7 @@ let DubaiValue = {
     average: 0,
     sum: 0,
     randomNum() {
-        return Math.floor(Math.random() * 100);
+        return Math.floor(Math.random() * 100 + 1);
     },
     hours(){
         let hoursArray = document.querySelector('.DubaiOutput');
@@ -83,7 +83,7 @@ let ParisValue = {
     average: 0,
     sum: 0,
     randomNum() {
-        return Math.floor(Math.random() * 100);
+        return Math.floor(Math.random() * 100 + 1);
     },
     hours(){
         let hoursArray = document.querySelector('.ParisOutput');
@@ -105,7 +105,7 @@ let LimaValue = {
     average: 0,
     sum: 0,
     randomNum() {
-        return Math.floor(Math.random() * 100);
+        return Math.floor(Math.random() * 100 + 1);
     },
     hours(){
         let hoursArray = document.querySelector('.LimaOutput');
