@@ -37,3 +37,14 @@ table, td, th{
 ul{
     list-style-position: inside;
 }
+
+.flex-box{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: auto;
+}
+.flex-box div{
+    margin: auto;
+    text-align: center;
+    
+}
