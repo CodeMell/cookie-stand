@@ -13,6 +13,7 @@ let SeattleValue = {
     max: 70,
     //average cookies per customer
     average: 0,
+    sum: 0,
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
@@ -24,6 +25,7 @@ let SeattleValue = {
             variable.innerHTML = `${hoursDemo[i]}: ${SeattleSales[i]} cookies`;
             hoursArray.append(variable);
         }
+        
     },
     
 };
@@ -35,6 +37,7 @@ let TokyoValue = {
     max: 70,
     //average cookies per customer
     average: 0,
+    sum: 0,
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
@@ -56,6 +59,7 @@ let DubaiValue = {
     max: 70,
     //average cookies per customer
     average: 0,
+    sum: 0,
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
@@ -77,6 +81,7 @@ let ParisValue = {
     max: 70,
     //average cookies per customer
     average: 0,
+    sum: 0,
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
@@ -98,6 +103,7 @@ let LimaValue = {
     max: 70,
     //average cookies per customer
     average: 0,
+    sum: 0,
     randomNum() {
         return Math.floor(Math.random() * 100);
     },
@@ -155,11 +161,17 @@ function LimaCPH(){
 function CPHmath(){
     //
     let initialValue = 0;
-    SeattleValue.average = Math.floor(SeattleSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
-    TokyoValue.average = Math.floor(TokyoSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
-    DubaiValue.average = Math.floor(DubaiSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
-    ParisValue.average = Math.floor(ParisSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
-    LimaValue.average = Math.floor(LimaSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue) /14);
+    SeattleValue.sum = SeattleSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
+    TokyoValue.sum = TokyoSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
+    DubaiValue.sum = DubaiSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
+    ParisValue.sum = ParisSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
+    LimaValue.sum = LimaSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
+
+    SeattleValue.average = Math.floor(SeattleValue.sum /14);
+    TokyoValue.average = Math.floor(TokyoValue.sum /14);
+    DubaiValue.average = Math.floor(DubaiValue.sum /14);
+    ParisValue.average = Math.floor(ParisValue.sum /14);
+    LimaValue.average = Math.floor(LimaValue.sum /14);
     //
     SeattleValue.max = Math.max(...SeattleSales);
     TokyoValue.max = Math.max(...TokyoSales);
@@ -177,23 +189,30 @@ function CPHmath(){
     document.getElementById('SeattleMax').innerHTML += SeattleValue.max;
     document.getElementById('SeattleMin').innerHTML += SeattleValue.min;
     document.getElementById('SeattleAvg').innerHTML += SeattleValue.average;
-    
+    document.getElementById("SeattleSum").innerHTML += `Total: ${SeattleValue.sum} cookies`;
+
     
     document.getElementById('TokyoMax').innerHTML += TokyoValue.max;
     document.getElementById('TokyoMin').innerHTML += TokyoValue.min;
     document.getElementById('TokyoAvg').innerHTML += TokyoValue.average;
+    document.getElementById("TokyoSum").innerHTML += `Total: ${TokyoValue.sum} cookies`;
+
 
     document.getElementById('DubaiMax').innerHTML += DubaiValue.max;
     document.getElementById('DubaiMin').innerHTML += DubaiValue.min;
     document.getElementById('DubaiAvg').innerHTML += DubaiValue.average;
+    document.getElementById("DubaiSum").innerHTML += `Total: ${DubaiValue.sum} cookies`;
+
 
     document.getElementById('ParisMax').innerHTML += ParisValue.max;
     document.getElementById('ParisMin').innerHTML += ParisValue.min;
     document.getElementById('ParisAvg').innerHTML += ParisValue.average;
+    document.getElementById("ParisSum").innerHTML += `Total: ${ParisValue.sum} cookies`;
 
     document.getElementById('LimaMax').innerHTML += LimaValue.max;
     document.getElementById('LimaMin').innerHTML += LimaValue.min;
     document.getElementById('LimaAvg').innerHTML += LimaValue.average;
+    document.getElementById("LimaSum").innerHTML += `Total: ${LimaValue.sum} cookies`;
 }
 
 
