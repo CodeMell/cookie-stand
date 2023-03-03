@@ -4,90 +4,57 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Salmon Cookies | Sales</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="SalmonCookies.css">
-    </head>
-    <body>
-        <div class="nav">
-            <a href="index.html">home</a>
-            <a href="sales.html">sales</a>
-        </div>
-        
-        <h1>Live Sales</h1>
 
-        <div class="content">
-            <table>
-                <tr>
-                    <th>Location</th>
-                    <th>Min / Cust</th>
-                    <th>Max / Cust</th>
-                    <th>Avg Cookie / Sale</th>
-                </tr>
-                <tr>
-                    <td>Seattle</td>
-                    <td id="SeattleMin"></td>
-                    <td id="SeattleMax"></td>
-                    <td id="SeattleAvg"></td>
-                </tr>
-                <tr>
-                    <td>Tokyo</td>
-                    <td id="TokyoMin"></td>
-                    <td id="TokyoMax"></td>
-                    <td id="TokyoAvg"></td>
-                </tr>
-                <tr>
-                    <td>Dubai</td>
-                    <td id="DubaiMin"></td>
-                    <td id="DubaiMax"></td>
-                    <td id="DubaiAvg"></td>
-                </tr>
-                <tr>
-                    <td>Paris</td>
-                    <td id="ParisMin"></td>
-                    <td id="ParisMax"></td>
-                    <td id="ParisAvg"></td>
-                </tr>
-                <tr>
-                    <td>Lima</td>
-                    <td id="LimaMin"></td>
-                    <td id="LimaMax"></td>
-                    <td id="LimaAvg"></td>
-                </tr>
-            </table>
-            <div class="flex-box">
-                <!--Seattle-->
-                <div>
-                    <p>Seattle</p>
-                    <ul class="SeattleOutput" id="SeattleSum"></ul>
-                </div>
-                <!--Tokyo-->
-                <div>
-                    <p>Tokyo</p>
-                    <ul class="TokyoOutput" id="TokyoSum"></ul>
-                </div>
-                <!--Dubai-->
-                <div>
-                    <p>Dubai</p>
-                    <ul class="DubaiOutput" id="DubaiSum"></ul>
-                </div>
-                <!--Paris-->
-                <div>
-                    <p>Paris</p>
-                    <ul class="ParisOutput" id="ParisSum"></ul>
-                </div>
-                <!--Lima-->
-                <div>
-                    <p>Lima</p>
-                    <ul class="LimaOutput" id="LimaSum"></ul>
-                </div>
-            </div>
-            
-        </div>
-        <script src="app.js" async defer></script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Salmon Cookies | Sales</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="SalmonCookies.css">
+</head>
+
+<body>
+    <div class="nav">
+        <a href="index.html">home</a>
+        <a href="sales.html">sales</a>
+    </div>
+
+    <h1>Live Sales</h1>
+
+    <div class="content">
+               <table id="DailyData">
+            <tr>
+                <th>locations</th>
+                <th>6am</th>
+                <th>7am</th>
+                <th>8am</th>
+                <th>9am</th>
+                <th>10am</th>
+                <th>11am</th>
+                <th>12pm</th>
+                <th>1pm</th>
+                <th>2pm</th>
+                <th>3pm</th>
+                <th>4pm</th>
+                <th>5pm</th>
+                <th>6pm</th>
+                <th>7pm</th>
+                <th>Daily Location Total</th>
+            </tr>
+        </table>
+        <br>
+        <table id="DailySubData">
+            <tr>
+                <th>Location</th>
+                <th>Min / Cust</th>
+                <th>Max / Cust</th>
+                <th>Avg Cookie / Sale</th>
+            </tr>
+        </table>
+
+    </div>
+    <script src="app.js" async defer></script>
+</body>
+
 </html>

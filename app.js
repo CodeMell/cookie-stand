@@ -1,225 +1,88 @@
-let SeattleSales = [];
+// let SeattleSales = [];
 let TokyoSales = [];
 let DubaiSales = [];
 let ParisSales = [];
 let LimaSales = [];
 let hoursDemo = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 
-
-let SeattleValue = {
-    //min hourly customers
-    min:1,
-    //max hourly customers
-    max: 70,
-    //average cookies per customer
-    average: 0,
-    sum: 0,
-    randomNum() {
-        return Math.floor(Math.random() * 100 + 1);
-    },
-    hours(){
-        let hoursArray = document.querySelector('.SeattleOutput');
-        for(let i = 0; i < hoursDemo.length; i++) {
-            //hoursDemo[i].innerHTML
-            let variable = document.createElement("li");
-            variable.innerHTML = `${hoursDemo[i]}: ${SeattleSales[i]} cookies`;
-            hoursArray.append(variable);
-        }
-        
-    },
-    
-};
-
-let TokyoValue = {
-    //min hourly customers
-    min:1,
-    //max hourly customers
-    max: 70,
-    //average cookies per customer
-    average: 0,
-    sum: 0,
-    randomNum() {
-        return Math.floor(Math.random() * 100 + 1);
-    },
-    hours(){
-        let hoursArray = document.querySelector('.TokyoOutput');
-        for(let i = 0; i < hoursDemo.length; i++) {
-            //hoursDemo[i].innerHTML
-            let variable = document.createElement("li");
-            variable.innerHTML = `${hoursDemo[i]}: ${TokyoSales[i]} cookies`;
-            hoursArray.append(variable);
-        }
-    },
-};
-
-let DubaiValue = {
-    //min hourly customers
-    min:1,
-    //max hourly customers
-    max: 70,
-    //average cookies per customer
-    average: 0,
-    sum: 0,
-    randomNum() {
-        return Math.floor(Math.random() * 100 + 1);
-    },
-    hours(){
-        let hoursArray = document.querySelector('.DubaiOutput');
-        for(let i = 0; i < hoursDemo.length; i++) {
-            //hoursDemo[i].innerHTML
-            let variable = document.createElement("li");
-            variable.innerHTML = `${hoursDemo[i]}: ${DubaiSales[i]} cookies`;
-            hoursArray.append(variable);
-        }
-    },
-};
-
-let ParisValue = {
-    //min hourly customers
-    min:1,
-    //max hourly customers
-    max: 70,
-    //average cookies per customer
-    average: 0,
-    sum: 0,
-    randomNum() {
-        return Math.floor(Math.random() * 100 + 1);
-    },
-    hours(){
-        let hoursArray = document.querySelector('.ParisOutput');
-        for(let i = 0; i < hoursDemo.length; i++) {
-            //hoursDemo[i].innerHTML
-            let variable = document.createElement("li");
-            variable.innerHTML = `${hoursDemo[i]}: ${ParisSales[i]} cookies`;
-            hoursArray.append(variable);
-        }
-    },
-};
-
-let LimaValue = {
-    //min hourly customers
-    min:1,
-    //max hourly customers
-    max: 70,
-    //average cookies per customer
-    average: 0,
-    sum: 0,
-    randomNum() {
-        return Math.floor(Math.random() * 100 + 1);
-    },
-    hours(){
-        let hoursArray = document.querySelector('.LimaOutput');
-        for(let i = 0; i < hoursDemo.length; i++) {
-            //hoursDemo[i].innerHTML
-            let variable = document.createElement("li");
-            variable.innerHTML = `${hoursDemo[i]}: ${LimaSales[i]} cookies`;
-            hoursArray.append(variable);
-        }
-    },
-};
-
-
-
-//customers per hour
-function SeattleCPH(){
-    for(let x = 0; x < 14; x += 1){
-        SeattleSales.push(SeattleValue.randomNum());
-    }
-    SeattleValue.hours();
-}
-
-//customers per hour
-function TokyoCPH(){
-    for(let x = 0; x < 14; x += 1){
-        TokyoSales.push(TokyoValue.randomNum());
-    }
-    TokyoValue.hours();
-}
-//customers per hour
-function DubaiCPH(){
-    for(let x = 0; x < 14; x += 1){
-        DubaiSales.push(DubaiValue.randomNum());
-    }
-    DubaiValue.hours();
-}
-//customers per hour
-function ParisCPH(){
-    for(let x = 0; x < 14; x += 1){
-        ParisSales.push(ParisValue.randomNum());
-    }
-    ParisValue.hours();
-}
-function LimaCPH(){
-    for(let x = 0; x < 14; x += 1){
-        LimaSales.push(LimaValue.randomNum());
-    }
-    LimaValue.hours();
-}
-
-
-
-function CPHmath(){
-    //
-    let initialValue = 0;
-    SeattleValue.sum = SeattleSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
-    TokyoValue.sum = TokyoSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
-    DubaiValue.sum = DubaiSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
-    ParisValue.sum = ParisSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
-    LimaValue.sum = LimaSales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
-
-    SeattleValue.average = Math.floor(SeattleValue.sum /14);
-    TokyoValue.average = Math.floor(TokyoValue.sum /14);
-    DubaiValue.average = Math.floor(DubaiValue.sum /14);
-    ParisValue.average = Math.floor(ParisValue.sum /14);
-    LimaValue.average = Math.floor(LimaValue.sum /14);
-    //
-    SeattleValue.max = Math.max(...SeattleSales);
-    TokyoValue.max = Math.max(...TokyoSales);
-    DubaiValue.max = Math.max(...DubaiSales);
-    ParisValue.max = Math.max(...ParisSales);
-    LimaValue.max = Math.max(...LimaSales);
-    //
-    SeattleValue.min = Math.min(...SeattleSales);
-    TokyoValue.min = Math.min(...TokyoSales);
-    DubaiValue.min = Math.min(...DubaiSales);
-    ParisValue.min = Math.min(...ParisSales);
-    LimaValue.min = Math.min(...LimaSales);
-    //print max,min,avg to html
-    console.log(SeattleValue.max);
-    document.getElementById('SeattleMax').innerHTML += SeattleValue.max;
-    document.getElementById('SeattleMin').innerHTML += SeattleValue.min;
-    document.getElementById('SeattleAvg').innerHTML += SeattleValue.average;
-    document.getElementById("SeattleSum").innerHTML += `Total: ${SeattleValue.sum} cookies`;
+function cookieStandLocation(location) {
+    let stand = {};
+    stand.location = location;
+    stand.sales = [];
 
     
-    document.getElementById('TokyoMax').innerHTML += TokyoValue.max;
-    document.getElementById('TokyoMin').innerHTML += TokyoValue.min;
-    document.getElementById('TokyoAvg').innerHTML += TokyoValue.average;
-    document.getElementById("TokyoSum").innerHTML += `Total: ${TokyoValue.sum} cookies`;
+
+    stand.cph = function () {
+        for (let x = 0; x < 14; x += 1) {
+            stand.sales.push(Math.floor(Math.random() * 100 + 1));
+        }
+    }
+
+    stand.CPHmath = function(){
+        let initialValue = 0;
+        stand.sum = stand.sales.reduce((accumulator, currentValue) => accumulator + currentValue,initialValue);
+        stand.average = Math.floor(stand.sum / 14);
+        stand.max = Math.max(...stand.sales);
+        stand.min = Math.min(...stand.sales);
+    }
+
+    stand.render = function() {
+        // let tblDemo = document.createElement('table');
+        // let trArr = [];
+        let trData = document.createElement('tr'); 
+        let localeTD = document.createElement('td');
+        localeTD.innerHTML = this.location;
+        trData.append(localeTD);
+    
+        for (let i = 0; i < this.sales.length; i++) {
+            let tdSales = document.createElement('td');
+            tdSales.innerHTML = this.sales[i];
+            trData.append(tdSales);
+        }
+        let trTotal = document.createElement('td');
+        trTotal.innerHTML = this.sum;
+        trData.append(trTotal);
+        document.getElementById('DailyData').append(trData);
+
+        let trSubData = document.createElement('tr');
+        let localeTD2 = document.createElement('td');
+        localeTD2.innerHTML = this.location;
+        let trMin = document.createElement('td');
+        trMin.innerHTML = this.min;
+        let trMax = document.createElement('td');
+        trMax.innerHTML = this.max;
+        let trAvg = document.createElement('td');
+        trAvg.innerHTML = this.average;
+        trSubData.append(localeTD2, trMin, trMax, trAvg);
+        document.getElementById('DailySubData').append(trSubData);
+       }
+       stand.render2 = function(){}
 
 
-    document.getElementById('DubaiMax').innerHTML += DubaiValue.max;
-    document.getElementById('DubaiMin').innerHTML += DubaiValue.min;
-    document.getElementById('DubaiAvg').innerHTML += DubaiValue.average;
-    document.getElementById("DubaiSum").innerHTML += `Total: ${DubaiValue.sum} cookies`;
-
-
-    document.getElementById('ParisMax').innerHTML += ParisValue.max;
-    document.getElementById('ParisMin').innerHTML += ParisValue.min;
-    document.getElementById('ParisAvg').innerHTML += ParisValue.average;
-    document.getElementById("ParisSum").innerHTML += `Total: ${ParisValue.sum} cookies`;
-
-    document.getElementById('LimaMax').innerHTML += LimaValue.max;
-    document.getElementById('LimaMin').innerHTML += LimaValue.min;
-    document.getElementById('LimaAvg').innerHTML += LimaValue.average;
-    document.getElementById("LimaSum").innerHTML += `Total: ${LimaValue.sum} cookies`;
+    return stand;
 }
+const seattle = cookieStandLocation('Seattle');
+seattle.cph();
+seattle.CPHmath();
+seattle.render();
 
+const tokyo = cookieStandLocation('Tokyo')
+tokyo.cph();
+tokyo.CPHmath();
+tokyo.render();
 
+const dubai = cookieStandLocation('Dubai')
+dubai.cph();
+dubai.CPHmath();
+dubai.render();
 
-SeattleCPH();
-TokyoCPH();
-DubaiCPH();
-ParisCPH();
-LimaCPH();
-CPHmath();
+const paris = cookieStandLocation('Paris')
+paris.cph();
+paris.CPHmath();
+paris.render();
+
+const lima = cookieStandLocation('Lima')
+lima.cph();
+lima.CPHmath();
+lima.render();
+
