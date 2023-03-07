@@ -1,5 +1,6 @@
 body{
-    background-color: darksalmon;
+    /* background-color: darksalmon; */
+    background-image: url(pic/cutter.jpeg);
 }
 .nav{
     background-color: wheat;
@@ -20,17 +21,39 @@ body{
 h1{
     /* can't get it to work so i did this */
     text-align: center;
+    margin: auto;
+    color: orange;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(pic/salmon.png) no-repeat center ;
+    width: 100%;
+    padding: 6%;
 }
+.buy{
+    background: url(pic/frosted-cookie.jpg) no-repeat center ;
+    width: 34%;
+    padding: 6%;
+}
+.merch{
+    background: url(pic/shirt.jpg) no-repeat center ;
+    width: 34%;
+    padding: 6%;
+}
+
 .content{
     background-color: slategray;
-    border: 8px double  salmon;
-    padding: 20px;
+    border: 10px double  transparent;
+    border-image: url(pic/fish.jpg) 50 round;
+    padding: 10px;
     text-align: center;
     margin: auto;
     width: 90%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.content img{
+    margin: auto;
+    width: 50%;
+}
+
 table, td, th{
     border: 3px solid black;
     margin: auto;
@@ -48,4 +71,14 @@ ul{
     margin: auto;
     text-align: center;
     
+}
+.flex-box a{
+    margin: auto;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+
+}
+.flex-box a:hover{
+    color: gold;
 }
