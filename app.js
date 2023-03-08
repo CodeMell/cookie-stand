@@ -5,9 +5,9 @@ let ParisSales = [];
 let LimaSales = [];
 let hoursDemo = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 
-function cookieStandLocation(location) {
+function cookieStandLocation(Storelocation) {
     let stand = {};
-    stand.location = location;
+    stand.Storelocation = Storelocation;
     stand.sales = [];
 
     
@@ -31,7 +31,7 @@ function cookieStandLocation(location) {
         // let trArr = [];
         let trData = document.createElement('tr'); 
         let localeTD = document.createElement('td');
-        localeTD.innerHTML = this.location;
+        localeTD.innerHTML = this.Storelocation;
         trData.append(localeTD);
     
         for (let i = 0; i < this.sales.length; i++) {
@@ -46,7 +46,7 @@ function cookieStandLocation(location) {
 
         let trSubData = document.createElement('tr');
         let localeTD2 = document.createElement('td');
-        localeTD2.innerHTML = this.location;
+        localeTD2.innerHTML = this.Storelocation;
         let trMin = document.createElement('td');
         trMin.innerHTML = this.min;
         let trMax = document.createElement('td');
@@ -85,4 +85,27 @@ const lima = cookieStandLocation('Lima')
 lima.cph();
 lima.CPHmath();
 lima.render();
+
+let locationForm = document.getElementById('StorelocationForm')
+
+// let Storelocation = "";
+
+locationForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let Storelocation = document.getElementById('locations').value;
+
+    if (Storelocation.values == ""){
+        alert("Inviald Storelocation")
+    }else{
+        alert("Store Storelocation saved")
+        console.log(`Storelocation is ${Storelocation}`)
+
+    }
+
+    let storelocation = cookieStandLocation(Storelocation);
+    storelocation.cph();
+    storelocation.CPHmath();
+    storelocation.render();
+});
 
