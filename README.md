@@ -9,5 +9,5 @@ snapshot for lab 7
 snapshot for lab 8
 ![lab 8 home page](https://github.com/CodeMell/cookie-stand/blob/main/Screenshot%202023-03-06%20194430.jpg)
 
-snapshot for lab 9
+snapshot for lab 9 & 10
 ![lab 9 slae page](https://github.com/CodeMell/cookie-stand/blob/main/Screenshot%202023-03-08%20135234.jpg)
